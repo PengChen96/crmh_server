@@ -1,5 +1,4 @@
 
-import os
 import logging
 
 class Logger():
@@ -9,8 +8,7 @@ class Logger():
         self.logger.setLevel(logging.DEBUG)
 
         # 创建一个handler，用于写入日志文件
-        print(os.getcwd())
-        fh = logging.FileHandler("crmh_server/tools/log/%s"%(logname),encoding='utf8')
+        fh = logging.FileHandler(logname,encoding='utf8')
         fh.setLevel(logging.DEBUG)
 
         # 再创建一个handler，用于输出到控制台
