@@ -1,5 +1,5 @@
 
-from flask_app import app
+from initApp import app
 from flask import jsonify
 # from flask_cors import *      #跨域
 
