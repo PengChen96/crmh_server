@@ -8,11 +8,11 @@ from tools.log.logger import Logger
 logger = Logger(logname='info.log', pyName="app.common.uploadFile.py").getlog()
 
 ALLOWED_EXTENSIONS = ('ico', 'png', 'jpg', 'jpeg', 'gif')
-app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024      # 最打允许 2MB 文件
+# app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024      # 最大允许 2MB 文件
 
 @app.route('/uploadPage')
 def uploadPage():
-    return send_file('pTest/toolsTest/html/uploadImgFile.html')
+    return send_file('pTest/appTest/common/uploadFile.html')
     # return "hello"
 
 @app.route('/upload',methods=['POST'])
