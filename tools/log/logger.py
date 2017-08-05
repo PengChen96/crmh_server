@@ -10,8 +10,12 @@ class Logger():
         self.logger.setLevel(logging.DEBUG)
 
         # 创建一个handler，用于写入日志文件
-        savePath = os.path.join(getProjectPath(),"static","pDownload","log",logname)
-        fh = logging.FileHandler(savePath,encoding='utf8')
+        savePath = os.path.join(getProjectPath(),"static","pDownload","log")
+        # 是否存在该目录
+        if not os.path.exists(savePath):
+            os.makedirs(savePath)
+        filePath = os.path.join(savePath, logname)
+        fh = logging.FileHandler(filePath,encoding='utf8')
         fh.setLevel(logging.DEBUG)
 
         # 再创建一个handler，用于输出到控制台
