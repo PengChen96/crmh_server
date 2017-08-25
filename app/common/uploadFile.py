@@ -42,7 +42,9 @@ def upload():
         # 保存文件
         file.save(filePath)
         logger.info(filePath)       # log
-        response = {'type':True,'msg':"文件上传成功"}
+        # fileUrl = ("http://127.0.0.1:8080/static/pDownload/images/%s/%s/%s/%s" % (Y,M,D,gfileName) )
+        fileUrl = "http://p0.so.qhmsg.com/t011712ac52b3515cbf.jpg"
+        response = {'type':True,'msg':"文件上传成功",'fileUrl':fileUrl}
     except:
         response = {'type':False,'msg':"文件上传失败"}
     return jsonify(response)
